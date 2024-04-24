@@ -1,0 +1,528 @@
+The system is: Linux - 6.5.0-27-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/evan/utk/cs594/CompDiff/compilers/diff-cc-4 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0d65d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d65d.dir/build.make CMakeFiles/cmTC_0d65d.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -v -MD -MT CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+Found CUDA installation: /usr/local/cuda, version 11.2
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)\"##SIG_AFL_PERSISTENT##\"; __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\"); _L(_A); })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"; __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\"); _I(); } while (0)" -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -Os -fdebug-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/llvm-13/lib/clang/13.0.1/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+Linking C executable cmTC_0d65d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d65d.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -v -rdynamic CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -o cmTC_0d65d 
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+Found CUDA installation: /usr/local/cuda, version 11.2
+ "/usr/bin/ld" -export-dynamic --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0d65d /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/llvm-13/lib/clang/13.0.1/include] ==> [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/llvm-13/lib/clang/13.0.1/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0d65d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d65d.dir/build.make CMakeFiles/cmTC_0d65d.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -v -MD -MT CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /usr/local/cuda  version 11.2]
+  ignore line: [clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [  _B = (char*)\"##SIG_AFL_PERSISTENT##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\")]
+  ignore line: [ _L(_A)]
+  ignore line: [ })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used))]
+  ignore line: [  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\")]
+  ignore line: [ _I()]
+  ignore line: [ } while (0)" -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -Os -fdebug-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/llvm-13/lib/clang/13.0.1/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_0d65d]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d65d.dir/link.txt --verbose=1]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -v -rdynamic CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o -o cmTC_0d65d ]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /usr/local/cuda  version 11.2]
+  link line: [ "/usr/bin/ld" -export-dynamic --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0d65d /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_0d65d] ==> ignore
+    arg [/lib/x86_64-linux-gnu/crt1.o] ==> obj [/lib/x86_64-linux-gnu/crt1.o]
+    arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+    arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
+    arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/llvm-13/bin/../lib] ==> dir [/usr/lib/llvm-13/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_0d65d.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o] ==> obj [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o]
+    arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/llvm-13/bin/../lib] ==> [/usr/lib/llvm-13/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/lib/x86_64-linux-gnu/crt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o;/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o;/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib/llvm-13/lib;/lib;/usr/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_44323/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_44323.dir/build.make CMakeFiles/cmTC_44323.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4   -v -MD -MT CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+Found CUDA installation: /usr/local/cuda, version 11.2
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)\"##SIG_AFL_PERSISTENT##\"; __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\"); _L(_A); })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"; __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\"); _I(); } while (0)" -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -Os -fdeprecated-macro -fdebug-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
+ /usr/lib/llvm-13/lib/clang/13.0.1/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+Linking CXX executable cmTC_44323
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44323.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4  -v -rdynamic CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_44323 
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+Found CUDA installation: /usr/local/cuda, version 11.2
+ "/usr/bin/ld" -export-dynamic --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_44323 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11]
+    add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11]
+    add: [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward]
+    add: [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11] ==> [/usr/include/c++/11]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11] ==> [/usr/include/x86_64-linux-gnu/c++/11]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward] ==> [/usr/include/c++/11/backward]
+  collapse include dir [/usr/lib/llvm-13/lib/clang/13.0.1/include] ==> [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/11;/usr/include/x86_64-linux-gnu/c++/11;/usr/include/c++/11/backward;/usr/lib/llvm-13/lib/clang/13.0.1/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_44323/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_44323.dir/build.make CMakeFiles/cmTC_44323.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4   -v -MD -MT CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /usr/local/cuda  version 11.2]
+  ignore line: [clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [  _B = (char*)\"##SIG_AFL_PERSISTENT##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\")]
+  ignore line: [ _L(_A)]
+  ignore line: [ })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used))]
+  ignore line: [  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\")]
+  ignore line: [ _I()]
+  ignore line: [ } while (0)" -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -Os -fdeprecated-macro -fdebug-compilation-dir=/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward]
+  ignore line: [ /usr/lib/llvm-13/lib/clang/13.0.1/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_44323]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44323.dir/link.txt --verbose=1]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4  -v -rdynamic CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_44323 ]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [Found CUDA installation: /usr/local/cuda  version 11.2]
+  link line: [ "/usr/bin/ld" -export-dynamic --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_44323 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_44323] ==> ignore
+    arg [/lib/x86_64-linux-gnu/crt1.o] ==> obj [/lib/x86_64-linux-gnu/crt1.o]
+    arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+    arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
+    arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/llvm-13/bin/../lib] ==> dir [/usr/lib/llvm-13/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_44323.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o] ==> obj [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o]
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o]
+    arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtend.o] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/llvm-13/bin/../lib] ==> [/usr/lib/llvm-13/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/lib/x86_64-linux-gnu/crt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o;/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o;/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib/llvm-13/lib;/lib;/usr/lib]
+  implicit fwks: []
+
+
+Determining if the function mkstemp exists passed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_17695/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_17695.dir/build.make CMakeFiles/cmTC_17695.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_17695.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -DCHECK_FUNCTION_EXISTS=mkstemp -MD -MT CMakeFiles/cmTC_17695.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_17695.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_17695.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_17695
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17695.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -DCHECK_FUNCTION_EXISTS=mkstemp -rdynamic CMakeFiles/cmTC_17695.dir/CheckFunctionExists.c.o -o cmTC_17695 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function mkstemps exists passed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ba015/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ba015.dir/build.make CMakeFiles/cmTC_ba015.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ba015.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -DCHECK_FUNCTION_EXISTS=mkstemps -MD -MT CMakeFiles/cmTC_ba015.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_ba015.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_ba015.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_ba015
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba015.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -DCHECK_FUNCTION_EXISTS=mkstemps -rdynamic CMakeFiles/cmTC_ba015.dir/CheckFunctionExists.c.o -o cmTC_ba015 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function popen exists passed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e34d2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e34d2.dir/build.make CMakeFiles/cmTC_e34d2.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e34d2.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -DCHECK_FUNCTION_EXISTS=popen -MD -MT CMakeFiles/cmTC_e34d2.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e34d2.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e34d2.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_e34d2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e34d2.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -DCHECK_FUNCTION_EXISTS=popen -rdynamic CMakeFiles/cmTC_e34d2.dir/CheckFunctionExists.c.o -o cmTC_e34d2 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Performing C++ SOURCE FILE Test HAVE_STD_SORT succeeded with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a3121/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a3121.dir/build.make CMakeFiles/cmTC_a3121.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a3121.dir/src.cxx.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4 -DHAVE_STD_SORT   -MD -MT CMakeFiles/cmTC_a3121.dir/src.cxx.o -MF CMakeFiles/cmTC_a3121.dir/src.cxx.o.d -o CMakeFiles/cmTC_a3121.dir/src.cxx.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp/src.cxx
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking CXX executable cmTC_a3121
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3121.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-4 -rdynamic CMakeFiles/cmTC_a3121.dir/src.cxx.o -o cmTC_a3121 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <algorithm>
+    bool cmp(const int &x, const int &y) { return x < y; }
+    int a[100];
+    int main() { std::sort(a, a+100, &cmp); }
+Determining if the function fseeko exists passed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_875dd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_875dd.dir/build.make CMakeFiles/cmTC_875dd.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_875dd.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4   -DCHECK_FUNCTION_EXISTS=fseeko -MD -MT CMakeFiles/cmTC_875dd.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_875dd.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_875dd.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_875dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_875dd.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4  -DCHECK_FUNCTION_EXISTS=fseeko -rdynamic CMakeFiles/cmTC_875dd.dir/CheckFunctionExists.c.o -o cmTC_875dd 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0f9ed/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0f9ed.dir/build.make CMakeFiles/cmTC_0f9ed.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f9ed.dir/CheckIncludeFile.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4    -MD -MT CMakeFiles/cmTC_0f9ed.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_0f9ed.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_0f9ed.dir/CheckIncludeFile.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_0f9ed
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f9ed.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4 -rdynamic CMakeFiles/cmTC_0f9ed.dir/CheckIncludeFile.c.o -o cmTC_0f9ed 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5fece/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5fece.dir/build.make CMakeFiles/cmTC_5fece.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5fece.dir/src.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4 -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_5fece.dir/src.c.o -MF CMakeFiles/cmTC_5fece.dir/src.c.o.d -o CMakeFiles/cmTC_5fece.dir/src.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp/src.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-4.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_5fece
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fece.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-4 -rdynamic CMakeFiles/cmTC_5fece.dir/src.c.o -o cmTC_5fece 
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-4/xpdf/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

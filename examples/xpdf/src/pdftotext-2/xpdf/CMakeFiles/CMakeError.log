@@ -1,0 +1,40 @@
+Determining if the function fseek64 exists failed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_89c02/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_89c02.dir/build.make CMakeFiles/cmTC_89c02.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-2   -DCHECK_FUNCTION_EXISTS=fseek64 -MD -MT CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-2.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_89c02
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89c02.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-2  -DCHECK_FUNCTION_EXISTS=fseek64 -rdynamic CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o -o cmTC_89c02 
+/usr/bin/ld: CMakeFiles/cmTC_89c02.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x9): undefined reference to `fseek64'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_89c02.dir/build.make:100: cmTC_89c02] Error 1
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_89c02/fast] Error 2
+
+
+
+Determining if the function _fseeki64 exists failed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_63431/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_63431.dir/build.make CMakeFiles/cmTC_63431.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-2   -DCHECK_FUNCTION_EXISTS=_fseeki64 -MD -MT CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+clang: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-2.o: 'linker' input unused [-Wunused-command-line-argument]
+Linking C executable cmTC_63431
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63431.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-2  -DCHECK_FUNCTION_EXISTS=_fseeki64 -rdynamic CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o -o cmTC_63431 
+/usr/bin/ld: CMakeFiles/cmTC_63431.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x9): undefined reference to `_fseeki64'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_63431.dir/build.make:100: cmTC_63431] Error 1
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-2/xpdf/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_63431/fast] Error 2
+
+
+

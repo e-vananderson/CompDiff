@@ -1,0 +1,40 @@
+Determining if the function fseek64 exists failed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3fef8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3fef8.dir/build.make CMakeFiles/cmTC_3fef8.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3fef8.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=fseek64 -o CMakeFiles/cmTC_3fef8.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
+Linking C executable cmTC_3fef8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fef8.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=fseek64 -rdynamic CMakeFiles/cmTC_3fef8.dir/CheckFunctionExists.c.o -o cmTC_3fef8 
+/usr/bin/ld: CMakeFiles/cmTC_3fef8.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup+0xd): undefined reference to `fseek64'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_3fef8.dir/build.make:99: cmTC_3fef8] Error 1
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3fef8/fast] Error 2
+
+
+
+Determining if the function _fseeki64 exists failed with the following output:
+Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3d831/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3d831.dir/build.make CMakeFiles/cmTC_3d831.dir/build
+gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d831.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=_fseeki64 -o CMakeFiles/cmTC_3d831.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
+Linking C executable cmTC_3d831
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d831.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=_fseeki64 -rdynamic CMakeFiles/cmTC_3d831.dir/CheckFunctionExists.c.o -o cmTC_3d831 
+/usr/bin/ld: CMakeFiles/cmTC_3d831.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup+0xd): undefined reference to `_fseeki64'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_3d831.dir/build.make:99: cmTC_3d831] Error 1
+gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3d831/fast] Error 2
+
+
+
