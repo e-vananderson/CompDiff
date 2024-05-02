@@ -871,6 +871,12 @@ u8 differential_compilers(afl_state_t *afl, void *mem, u32 len) {
 
   lseek(afl->diff_fsrv[0].out_fd, 0, SEEK_SET);
   ret = afl_fsrv_run_target(&afl->diff_fsrv[0], afl->fsrv.exec_tmout, &afl->stop_soon);
+
+  /* Line taken from common_fuzz_stuff; this modification should
+   * implement the future work suggestion
+   * This handles FAULT_ERROR for us: */
+  afl->queued_discovered += save_if_interesting(afl, mem, len, ret);
+  
   if (ret == FSRV_RUN_TMOUT) {
     return ret;
   }
@@ -893,6 +899,12 @@ u8 differential_compilers(afl_state_t *afl, void *mem, u32 len) {
   for (int idx = 1; idx < afl->diff_num; idx++) {
     lseek(afl->diff_fsrv[0].out_fd, 0, SEEK_SET);
     ret = afl_fsrv_run_target(&afl->diff_fsrv[idx], afl->fsrv.exec_tmout, &afl->stop_soon);
+    
+    /* Line taken from common_fuzz_stuff; this modification should
+    * implement the future work suggestion
+    * This handles FAULT_ERROR for us: */
+    afl->queued_discovered += save_if_interesting(afl, mem, len, ret);
+
     if (ret == FSRV_RUN_TMOUT) {
       return ret;
     } 

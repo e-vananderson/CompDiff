@@ -1,4 +1,4 @@
-The system is: Linux - 6.5.0-27-generic - x86_64
+The system is: Linux - 6.5.0-28-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 
 Build flags: 
@@ -28,10 +28,10 @@ The CXX compiler identification is GNU, found in "/home/evan/utk/cs594/CompDiff/
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_503b8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_503b8.dir/build.make CMakeFiles/cmTC_503b8.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_03c4c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_03c4c.dir/build.make CMakeFiles/cmTC_03c4c.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -v -o CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -v -o CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gcc-11
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -41,8 +41,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_503b8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccF9flg1.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_03c4c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWd5XtV.s
 GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -62,16 +62,16 @@ GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 50eaa2331df977b8016186198deb2d18
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/'
- as -v --64 -o CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o /tmp/ccF9flg1.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/'
+ as -v --64 -o CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o /tmp/ccWd5XtV.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.'
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.'
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_503b8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_503b8.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -v -rdynamic CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o -o cmTC_503b8 
+Linking C executable cmTC_03c4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03c4c.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -v -rdynamic CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o -o cmTC_03c4c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gcc-11
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -84,9 +84,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_503b8' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_503b8.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHZRntT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_503b8 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_503b8' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_503b8.'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_03c4c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_03c4c.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVDrcmK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_03c4c /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_03c4c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_03c4c.'
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -110,10 +110,10 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_503b8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_503b8.dir/build.make CMakeFiles/cmTC_503b8.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_03c4c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_03c4c.dir/build.make CMakeFiles/cmTC_03c4c.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -v -o CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -v -o CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gcc-11]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -123,7 +123,7 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -131,7 +131,7 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/']
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
@@ -140,7 +140,7 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_503b8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccF9flg1.s]
+  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_03c4c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWd5XtV.s]
   ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -160,7 +160,7 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 50eaa2331df977b8016186198deb2d18]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -168,12 +168,12 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o /tmp/ccF9flg1.s]
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o /tmp/ccWd5XtV.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -181,11 +181,11 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.']
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.']
   ignore line: [gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done]
-  ignore line: [Linking C executable cmTC_503b8]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_503b8.dir/link.txt --verbose=1]
-  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -v -rdynamic CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o -o cmTC_503b8 ]
+  ignore line: [Linking C executable cmTC_03c4c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03c4c.dir/link.txt --verbose=1]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -v -rdynamic CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o -o cmTC_03c4c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gcc-11]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -198,7 +198,7 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_503b8' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_03c4c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -206,13 +206,13 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_503b8.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHZRntT.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_503b8 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_03c4c.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVDrcmK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_03c4c /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccHZRntT.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccVDrcmK.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -231,7 +231,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_503b8] ==> ignore
+    arg [cmTC_03c4c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -243,7 +243,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_503b8.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_03c4c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o] ==> obj [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o]
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
@@ -278,10 +278,10 @@ Parsed C implicit link information from above output:
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_36ab7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_36ab7.dir/build.make CMakeFiles/cmTC_36ab7.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8e371/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8e371.dir/build.make CMakeFiles/cmTC_8e371.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1   -v -o CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1   -v -o CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/g++-11
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -291,8 +291,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_36ab7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc2PacrR.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8e371.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWVPUvp.s
 GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -316,16 +316,16 @@ GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/'
- as -v --64 -o CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc2PacrR.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/'
+ as -v --64 -o CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccWVPUvp.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.'
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.'
 g++-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking CXX executable cmTC_36ab7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36ab7.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1  -v -rdynamic CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_36ab7 
+Linking CXX executable cmTC_8e371
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e371.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1  -v -rdynamic CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8e371 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/g++-11
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -338,9 +338,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_36ab7' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_36ab7.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpbP6xc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_36ab7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_36ab7' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_36ab7.'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8e371' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e371.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdJIfku.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8e371 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8e371' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e371.'
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -370,10 +370,10 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_36ab7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_36ab7.dir/build.make CMakeFiles/cmTC_36ab7.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8e371/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8e371.dir/build.make CMakeFiles/cmTC_8e371.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1   -v -o CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1   -v -o CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/g++-11]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -383,7 +383,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -391,7 +391,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/']
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
@@ -400,7 +400,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_36ab7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc2PacrR.s]
+  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_8e371.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -Os -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccWVPUvp.s]
   ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -424,7 +424,7 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -432,12 +432,12 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc2PacrR.s]
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccWVPUvp.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -445,11 +445,11 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.']
   ignore line: [g++-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done]
-  ignore line: [Linking CXX executable cmTC_36ab7]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36ab7.dir/link.txt --verbose=1]
-  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1  -v -rdynamic CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_36ab7 ]
+  ignore line: [Linking CXX executable cmTC_8e371]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e371.dir/link.txt --verbose=1]
+  ignore line: [/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1  -v -rdynamic CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8e371 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/g++-11]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -462,7 +462,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_36ab7' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8e371' '-Os' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
   ignore line: [  _B = (char*)"##SIG_AFL_PERSISTENT##"]
   ignore line: [ __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop")]
   ignore line: [ _L(_A)]
@@ -470,13 +470,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_36ab7.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpbP6xc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_36ab7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8e371.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdJIfku.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8e371 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccpbP6xc.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccdJIfku.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -495,7 +495,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_36ab7] ==> ignore
+    arg [cmTC_8e371] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -507,7 +507,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_36ab7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_8e371.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o] ==> obj [/home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o]
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
@@ -538,14 +538,14 @@ Parsed CXX implicit link information from above output:
 Determining if the function mkstemp exists passed with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a49f7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a49f7.dir/build.make CMakeFiles/cmTC_a49f7.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8dfb7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8dfb7.dir/build.make CMakeFiles/cmTC_8dfb7.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a49f7.dir/CheckFunctionExists.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=mkstemp -o CMakeFiles/cmTC_a49f7.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Building C object CMakeFiles/cmTC_8dfb7.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=mkstemp -o CMakeFiles/cmTC_8dfb7.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_a49f7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a49f7.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=mkstemp -rdynamic CMakeFiles/cmTC_a49f7.dir/CheckFunctionExists.c.o -o cmTC_a49f7 
+Linking C executable cmTC_8dfb7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8dfb7.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=mkstemp -rdynamic CMakeFiles/cmTC_8dfb7.dir/CheckFunctionExists.c.o -o cmTC_8dfb7 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -553,14 +553,14 @@ gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdf
 Determining if the function mkstemps exists passed with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b6876/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b6876.dir/build.make CMakeFiles/cmTC_b6876.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8f236/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8f236.dir/build.make CMakeFiles/cmTC_8f236.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b6876.dir/CheckFunctionExists.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=mkstemps -o CMakeFiles/cmTC_b6876.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Building C object CMakeFiles/cmTC_8f236.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=mkstemps -o CMakeFiles/cmTC_8f236.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_b6876
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6876.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=mkstemps -rdynamic CMakeFiles/cmTC_b6876.dir/CheckFunctionExists.c.o -o cmTC_b6876 
+Linking C executable cmTC_8f236
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f236.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=mkstemps -rdynamic CMakeFiles/cmTC_8f236.dir/CheckFunctionExists.c.o -o cmTC_8f236 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -568,14 +568,14 @@ gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdf
 Determining if the function popen exists passed with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_07b6f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_07b6f.dir/build.make CMakeFiles/cmTC_07b6f.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d513b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d513b.dir/build.make CMakeFiles/cmTC_d513b.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_07b6f.dir/CheckFunctionExists.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=popen -o CMakeFiles/cmTC_07b6f.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Building C object CMakeFiles/cmTC_d513b.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=popen -o CMakeFiles/cmTC_d513b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_07b6f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07b6f.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=popen -rdynamic CMakeFiles/cmTC_07b6f.dir/CheckFunctionExists.c.o -o cmTC_07b6f 
+Linking C executable cmTC_d513b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d513b.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=popen -rdynamic CMakeFiles/cmTC_d513b.dir/CheckFunctionExists.c.o -o cmTC_d513b 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -583,14 +583,14 @@ gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdf
 Performing C++ SOURCE FILE Test HAVE_STD_SORT succeeded with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_935e5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_935e5.dir/build.make CMakeFiles/cmTC_935e5.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5c035/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5c035.dir/build.make CMakeFiles/cmTC_5c035.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_935e5.dir/src.cxx.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1 -DHAVE_STD_SORT   -o CMakeFiles/cmTC_935e5.dir/src.cxx.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/src.cxx
+Building CXX object CMakeFiles/cmTC_5c035.dir/src.cxx.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1 -DHAVE_STD_SORT   -o CMakeFiles/cmTC_5c035.dir/src.cxx.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/src.cxx
 g++-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking CXX executable cmTC_935e5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_935e5.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1 -rdynamic CMakeFiles/cmTC_935e5.dir/src.cxx.o -o cmTC_935e5 
+Linking CXX executable cmTC_5c035
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c035.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cxx-1 -rdynamic CMakeFiles/cmTC_5c035.dir/src.cxx.o -o cmTC_5c035 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -602,14 +602,14 @@ Source file was:
 Determining if the function fseeko exists passed with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c3800/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c3800.dir/build.make CMakeFiles/cmTC_c3800.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_86cfd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_86cfd.dir/build.make CMakeFiles/cmTC_86cfd.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c3800.dir/CheckFunctionExists.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=fseeko -o CMakeFiles/cmTC_c3800.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Building C object CMakeFiles/cmTC_86cfd.dir/CheckFunctionExists.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1   -DCHECK_FUNCTION_EXISTS=fseeko -o CMakeFiles/cmTC_86cfd.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_c3800
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3800.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=fseeko -rdynamic CMakeFiles/cmTC_c3800.dir/CheckFunctionExists.c.o -o cmTC_c3800 
+Linking C executable cmTC_86cfd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86cfd.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1  -DCHECK_FUNCTION_EXISTS=fseeko -rdynamic CMakeFiles/cmTC_86cfd.dir/CheckFunctionExists.c.o -o cmTC_86cfd 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -617,14 +617,14 @@ gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdf
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7028b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7028b.dir/build.make CMakeFiles/cmTC_7028b.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3dd22/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3dd22.dir/build.make CMakeFiles/cmTC_3dd22.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7028b.dir/CheckIncludeFile.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1    -o CMakeFiles/cmTC_7028b.dir/CheckIncludeFile.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Building C object CMakeFiles/cmTC_3dd22.dir/CheckIncludeFile.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1    -o CMakeFiles/cmTC_3dd22.dir/CheckIncludeFile.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/CheckIncludeFile.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_7028b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7028b.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -rdynamic CMakeFiles/cmTC_7028b.dir/CheckIncludeFile.c.o -o cmTC_7028b 
+Linking C executable cmTC_3dd22
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3dd22.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -rdynamic CMakeFiles/cmTC_3dd22.dir/CheckIncludeFile.c.o -o cmTC_3dd22 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
@@ -632,14 +632,14 @@ gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdf
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
 Change Dir: /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_be15a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_be15a.dir/build.make CMakeFiles/cmTC_be15a.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f847a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f847a.dir/build.make CMakeFiles/cmTC_f847a.dir/build
 gmake[1]: Entering directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_be15a.dir/src.c.o
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_be15a.dir/src.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/src.c
+Building C object CMakeFiles/cmTC_f847a.dir/src.c.o
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f847a.dir/src.c.o -c /home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp/src.c
 gcc-11: warning: /home/evan/utk/cs594/CompDiff/compilers/diff-llvm-rt-1.o: linker input file unused because linking not done
-Linking C executable cmTC_be15a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be15a.dir/link.txt --verbose=1
-/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -rdynamic CMakeFiles/cmTC_be15a.dir/src.c.o -o cmTC_be15a 
+Linking C executable cmTC_f847a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f847a.dir/link.txt --verbose=1
+/home/evan/utk/cs594/CompDiff/compilers/diff-cc-1 -rdynamic CMakeFiles/cmTC_f847a.dir/src.c.o -o cmTC_f847a 
 gmake[1]: Leaving directory '/home/evan/utk/cs594/CompDiff/examples/xpdf/src/pdftotext-1/xpdf/CMakeFiles/CMakeTmp'
 
 
