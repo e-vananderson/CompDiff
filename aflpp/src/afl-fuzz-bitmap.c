@@ -85,6 +85,36 @@ u32 count_bits(afl_state_t *afl, u8 *mem) {
 
 }
 
+u32 diff_count_bits(afl_state_t *afl, u8 *mem, u32 diff_idx) {
+
+  u32 *ptr = (u32 *)mem;
+  u32  i = (afl->diff_fsrv[diff_idx].map_size >> 2);
+  u32  ret = 0;
+
+  while (i--) {
+
+    u32 v = *(ptr++);
+
+    /* This gets called on the inverse, virgin bitmap; optimize for sparse
+       data. */
+
+    if (v == 0xffffffff) {
+
+      ret += 32;
+      continue;
+
+    }
+
+    v -= ((v >> 1) & 0x55555555);
+    v = (v & 0x33333333) + ((v >> 2) & 0x33333333);
+    ret += (((v + (v >> 4)) & 0xF0F0F0F) * 0x01010101) >> 24;
+
+  }
+
+  return ret;
+
+}
+
 /* Count the number of bytes set in the bitmap. Called fairly sporadically,
    mostly to update the status screen or calibrate and examine confirmed
    new paths. */
@@ -93,6 +123,28 @@ u32 count_bytes(afl_state_t *afl, u8 *mem) {
 
   u32 *ptr = (u32 *)mem;
   u32  i = (afl->fsrv.map_size >> 2);
+  u32  ret = 0;
+
+  while (i--) {
+
+    u32 v = *(ptr++);
+
+    if (!v) { continue; }
+    if (v & 0x000000ffU) { ++ret; }
+    if (v & 0x0000ff00U) { ++ret; }
+    if (v & 0x00ff0000U) { ++ret; }
+    if (v & 0xff000000U) { ++ret; }
+
+  }
+
+  return ret;
+
+}
+
+u32 diff_count_bytes(afl_state_t *afl, u8 *mem, u32 diff_idx) {
+
+  u32 *ptr = (u32 *)mem;
+  u32  i = (afl->diff_fsrv[diff_idx].map_size >> 2);
   u32  ret = 0;
 
   while (i--) {
@@ -244,6 +296,41 @@ inline u8 has_new_bits(afl_state_t *afl, u8 *virgin_map) {
 
 }
 
+inline u8 diff_has_new_bits(afl_state_t *afl, u8 *virgin_map, u32 diff_idx) {
+
+#ifdef WORD_SIZE_64
+
+  u64 *current = (u64 *)afl->diff_fsrv[diff_idx].trace_bits;
+  u64 *virgin = (u64 *)virgin_map;
+
+  u32 i = (afl->diff_fsrv[diff_idx].map_size >> 3);
+
+#else
+
+  u32 *current = (u32 *)afl->diff_fsrv[diff_idx].trace_bits;
+  u32 *virgin = (u32 *)virgin_map;
+
+  u32 i = (afl->diff_fsrv[diff_idx].map_size >> 2);
+
+#endif                                                     /* ^WORD_SIZE_64 */
+
+  u8 ret = 0;
+  while (i--) {
+
+    if (unlikely(*current)) discover_word(&ret, current, virgin);
+
+    current++;
+    virgin++;
+
+  }
+
+  if (unlikely(ret) && likely(virgin_map == afl->diff_virgin_bits[diff_idx]))
+    afl->bitmap_changed = 1;
+
+  return ret;
+
+}
+
 /* A combination of classify_counts and has_new_bits. If 0 is returned, then the
  * trace bits are kept as-is. Otherwise, the trace bits are overwritten with
  * classified values.
@@ -275,6 +362,27 @@ inline u8 has_new_bits_unclassified(afl_state_t *afl, u8 *virgin_map) {
 
 }
 
+inline u8 diff_has_new_bits_unclassified(afl_state_t *afl, u8 *virgin_map, u32 diff_idx) {
+
+  /* Handle the hot path first: no new coverage */
+  u8 *end = afl->diff_fsrv[diff_idx].trace_bits + afl->diff_fsrv[diff_idx].map_size;
+
+#ifdef WORD_SIZE_64
+
+  if (!skim((u64 *)virgin_map, (u64 *)afl->diff_fsrv[diff_idx].trace_bits, (u64 *)end))
+    return 0;
+
+#else
+
+  if (!skim((u32 *)virgin_map, (u32 *)afl->diff_fsrv[diff_idx].trace_bits, (u32 *)end))
+    return 0;
+
+#endif                                                     /* ^WORD_SIZE_64 */
+  classify_counts(&afl->diff_fsrv[diff_idx]);
+  return diff_has_new_bits(afl, virgin_map, diff_idx);
+
+}
+
 /* Compact trace bytes into a smaller bitmap. We effectively just drop the
    count information here. This is called only sporadically, for some
    new paths. */
@@ -284,6 +392,19 @@ void minimize_bits(afl_state_t *afl, u8 *dst, u8 *src) {
   u32 i = 0;
 
   while (i < afl->fsrv.map_size) {
+
+    if (*(src++)) { dst[i >> 3] |= 1 << (i & 7); }
+    ++i;
+
+  }
+
+}
+
+void diff_minimize_bits(afl_state_t *afl, u8 *dst, u8 *src, u32 diff_idx) {
+
+  u32 i = 0;
+
+  while (i < afl->diff_fsrv[diff_idx].map_size) {
 
     if (*(src++)) { dst[i >> 3] |= 1 << (i & 7); }
     ++i;
@@ -783,3 +904,339 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
 
 }
 
+u8 __attribute__((hot))
+diff_save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault, u32 diff_idx) {
+
+  if (unlikely(len == 0)) { return 0; }
+
+  u8 *queue_fn = "";
+  u8  new_bits = '\0';
+  s32 fd;
+  u8  keeping = 0, res, classified = 0;
+  u64 cksum = 0;
+
+  u8 fn[PATH_MAX];
+
+  /* Update path frequency. */
+
+  /* Generating a hash on every input is super expensive. Bad idea and should
+     only be used for special schedules */
+  if (unlikely(afl->schedule >= FAST && afl->schedule <= RARE)) {
+
+    cksum = hash64(afl->diff_fsrv[diff_idx].trace_bits, afl->diff_fsrv[diff_idx].map_size, HASH_CONST);
+
+    /* Saturated increment */
+    if (afl->n_fuzz[cksum % N_FUZZ_SIZE] < 0xFFFFFFFF)
+      afl->n_fuzz[cksum % N_FUZZ_SIZE]++;
+
+  }
+
+  if (likely(fault == afl->crash_mode)) {
+
+    /* Keep only if there are new bits in the map, add to queue for
+       future fuzzing, etc. */
+
+    new_bits = diff_has_new_bits_unclassified(afl, afl->diff_virgin_bits[diff_idx], diff_idx);
+
+    if (likely(!new_bits)) {
+
+      if (unlikely(afl->crash_mode)) { ++afl->total_crashes; }
+      return 0;
+
+    }
+
+    classified = new_bits;
+
+#ifndef SIMPLE_FILES
+
+    queue_fn = alloc_printf(
+        "%s/queue/id:%06u,%s", afl->out_dir, afl->queued_paths,
+        describe_op(afl, new_bits, NAME_MAX - strlen("id:000000,")));
+
+#else
+
+    queue_fn =
+        alloc_printf("%s/queue/id_%06u", afl->out_dir, afl->queued_paths);
+
+#endif                                                    /* ^!SIMPLE_FILES */
+    fd = open(queue_fn, O_WRONLY | O_CREAT | O_EXCL, DEFAULT_PERMISSION);
+    if (unlikely(fd < 0)) { PFATAL("Unable to create '%s'", queue_fn); }
+    ck_write(fd, mem, len, queue_fn);
+    close(fd);
+    add_to_queue(afl, queue_fn, len, 0);
+
+#ifdef INTROSPECTION
+    if (afl->custom_mutators_count && afl->current_custom_fuzz) {
+
+      LIST_FOREACH(&afl->custom_mutator_list, struct custom_mutator, {
+
+        if (afl->current_custom_fuzz == el && el->afl_custom_introspection) {
+
+          const char *ptr = el->afl_custom_introspection(el->data);
+
+          if (ptr != NULL && *ptr != 0) {
+
+            fprintf(afl->introspection_file, "QUEUE CUSTOM %s = %s\n", ptr,
+                    afl->queue_top->fname);
+
+          }
+
+        }
+
+      });
+
+    } else if (afl->mutation[0] != 0) {
+
+      fprintf(afl->introspection_file, "QUEUE %s = %s\n", afl->mutation,
+              afl->queue_top->fname);
+
+    }
+
+#endif
+
+    if (new_bits == 2) {
+
+      afl->queue_top->has_new_cov = 1;
+      ++afl->queued_with_cov;
+
+    }
+
+    /* AFLFast schedule? update the new queue entry */
+    if (cksum) {
+
+      afl->queue_top->n_fuzz_entry = cksum % N_FUZZ_SIZE;
+      afl->n_fuzz[afl->queue_top->n_fuzz_entry] = 1;
+
+    }
+
+    /* due to classify counts we have to recalculate the checksum */
+    afl->queue_top->exec_cksum =
+        hash64(afl->diff_fsrv[diff_idx].trace_bits, afl->diff_fsrv[diff_idx].map_size, HASH_CONST);
+
+    /* Try to calibrate inline; this also calls update_bitmap_score() when
+       successful. */
+
+    res = diff_calibrate_case(afl, afl->queue_top, mem, afl->queue_cycle - 1, 0, diff_idx);
+
+    if (unlikely(res == FSRV_RUN_ERROR)) {
+
+      FATAL("Unable to execute target application");
+
+    }
+
+    if (likely(afl->q_testcase_max_cache_size)) {
+
+      queue_testcase_store_mem(afl, afl->queue_top, mem);
+
+    }
+
+    keeping = 1;
+
+  }
+
+  switch (fault) {
+
+    case FSRV_RUN_TMOUT:
+
+      /* Timeouts are not very interesting, but we're still obliged to keep
+         a handful of samples. We use the presence of new bits in the
+         hang-specific bitmap as a signal of uniqueness. In "non-instrumented"
+         mode, we just keep everything. */
+
+      ++afl->total_tmouts;
+
+      if (afl->unique_hangs >= KEEP_UNIQUE_HANG) { return keeping; }
+
+      if (likely(!afl->non_instrumented_mode)) {
+
+        if (!classified) {
+
+          classify_counts(&afl->diff_fsrv[diff_idx]);
+          classified = 1;
+
+        }
+
+        diff_simplify_trace(afl, afl->diff_fsrv[diff_idx].trace_bits, diff_idx);
+
+        if (!diff_has_new_bits(afl, afl->diff_virgin_tmout[diff_idx], diff_idx)) { return keeping; }
+
+      }
+
+      ++afl->unique_tmouts;
+#ifdef INTROSPECTION
+      if (afl->custom_mutators_count && afl->current_custom_fuzz) {
+
+        LIST_FOREACH(&afl->custom_mutator_list, struct custom_mutator, {
+
+          if (afl->current_custom_fuzz == el && el->afl_custom_introspection) {
+
+            const char *ptr = el->afl_custom_introspection(el->data);
+
+            if (ptr != NULL && *ptr != 0) {
+
+              fprintf(afl->introspection_file,
+                      "UNIQUE_TIMEOUT CUSTOM %s = %s\n", ptr,
+                      afl->queue_top->fname);
+
+            }
+
+          }
+
+        });
+
+      } else if (afl->mutation[0] != 0) {
+
+        fprintf(afl->introspection_file, "UNIQUE_TIMEOUT %s\n", afl->mutation);
+
+      }
+
+#endif
+
+      /* Before saving, we make sure that it's a genuine hang by re-running
+         the target with a more generous timeout (unless the default timeout
+         is already generous). */
+
+      if (afl->diff_fsrv[diff_idx].exec_tmout < afl->hang_tmout) {
+
+        u8 new_fault;
+        diff_write_to_testcase(afl, mem, len, diff_idx);
+        new_fault = fuzz_run_target(afl, &afl->diff_fsrv[diff_idx], afl->hang_tmout);
+        classify_counts(&afl->diff_fsrv[diff_idx]);
+
+        /* A corner case that one user reported bumping into: increasing the
+           timeout actually uncovers a crash. Make sure we don't discard it if
+           so. */
+
+        if (!afl->stop_soon && new_fault == FSRV_RUN_CRASH) {
+
+          goto keep_as_crash;
+
+        }
+
+        if (afl->stop_soon || new_fault != FSRV_RUN_TMOUT) { return keeping; }
+
+      }
+
+#ifndef SIMPLE_FILES
+
+      snprintf(fn, PATH_MAX, "%s/hangs/id:%06llu,%s", afl->out_dir,
+               afl->unique_hangs,
+               describe_op(afl, 0, NAME_MAX - strlen("id:000000,")));
+
+#else
+
+      snprintf(fn, PATH_MAX, "%s/hangs/id_%06llu", afl->out_dir,
+               afl->unique_hangs);
+
+#endif                                                    /* ^!SIMPLE_FILES */
+
+      ++afl->unique_hangs;
+
+      afl->last_hang_time = get_cur_time();
+
+      break;
+
+    case FSRV_RUN_CRASH:
+
+    keep_as_crash:
+
+      /* This is handled in a manner roughly similar to timeouts,
+         except for slightly different limits and no need to re-run test
+         cases. */
+
+      ++afl->total_crashes;
+
+      if (afl->unique_crashes >= KEEP_UNIQUE_CRASH) { return keeping; }
+
+      if (likely(!afl->non_instrumented_mode)) {
+
+        if (!classified) { classify_counts(&afl->diff_fsrv[diff_idx]); }
+
+        diff_simplify_trace(afl, afl->diff_fsrv[diff_idx].trace_bits, diff_idx);
+
+        if (!diff_has_new_bits(afl, afl->diff_virgin_crash[diff_idx], diff_idx)) { return keeping; }
+
+      }
+
+      if (unlikely(!afl->unique_crashes)) { write_crash_readme(afl); }
+
+#ifndef SIMPLE_FILES
+
+      snprintf(fn, PATH_MAX, "%s/crashes/id:%06llu,sig:%02u,%s", afl->out_dir,
+               afl->unique_crashes, afl->diff_fsrv[diff_idx].last_kill_signal,
+               describe_op(afl, 0, NAME_MAX - strlen("id:000000,sig:00,")));
+
+#else
+
+      snprintf(fn, PATH_MAX, "%s/crashes/id_%06llu_%02u", afl->out_dir,
+               afl->unique_crashes, afl->last_kill_signal);
+
+#endif                                                    /* ^!SIMPLE_FILES */
+
+      ++afl->unique_crashes;
+#ifdef INTROSPECTION
+      if (afl->custom_mutators_count && afl->current_custom_fuzz) {
+
+        LIST_FOREACH(&afl->custom_mutator_list, struct custom_mutator, {
+
+          if (afl->current_custom_fuzz == el && el->afl_custom_introspection) {
+
+            const char *ptr = el->afl_custom_introspection(el->data);
+
+            if (ptr != NULL && *ptr != 0) {
+
+              fprintf(afl->introspection_file, "UNIQUE_CRASH CUSTOM %s = %s\n",
+                      ptr, afl->queue_top->fname);
+
+            }
+
+          }
+
+        });
+
+      } else if (afl->mutation[0] != 0) {
+
+        fprintf(afl->introspection_file, "UNIQUE_CRASH %s\n", afl->mutation);
+
+      }
+
+#endif
+      if (unlikely(afl->infoexec)) {
+
+        // if the user wants to be informed on new crashes - do that
+#if !TARGET_OS_IPHONE
+        // we dont care if system errors, but we dont want a
+        // compiler warning either
+        // See
+        // https://stackoverflow.com/questions/11888594/ignoring-return-values-in-c
+        (void)(system(afl->infoexec) + 1);
+#else
+        WARNF("command execution unsupported");
+#endif
+
+      }
+
+      afl->last_crash_time = get_cur_time();
+      afl->last_crash_execs = afl->diff_fsrv[diff_idx].total_execs;
+
+      break;
+
+    case FSRV_RUN_ERROR:
+      FATAL("Unable to execute target application");
+
+    default:
+      return keeping;
+
+  }
+
+  /* If we're here, we apparently want to save the crash or hang
+     test case, too. */
+
+  fd = open(fn, O_WRONLY | O_CREAT | O_EXCL, DEFAULT_PERMISSION);
+  if (unlikely(fd < 0)) { PFATAL("Unable to create '%s'", fn); }
+  ck_write(fd, mem, len, fn);
+  close(fd);
+
+  return keeping;
+
+}

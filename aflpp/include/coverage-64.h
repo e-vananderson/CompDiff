@@ -55,6 +55,38 @@ void simplify_trace(afl_state_t *afl, u8 *bytes) {
 
 }
 
+void diff_simplify_trace(afl_state_t *afl, u8 *bytes, u32 diff_idx) {
+
+  u64 *mem = (u64 *)bytes;
+  u32  i = (afl->diff_fsrv[diff_idx].map_size >> 3);
+
+  while (i--) {
+
+    /* Optimize for sparse bitmaps. */
+
+    if (unlikely(*mem)) {
+
+      u8 *mem8 = (u8 *)mem;
+
+      mem8[0] = simplify_lookup[mem8[0]];
+      mem8[1] = simplify_lookup[mem8[1]];
+      mem8[2] = simplify_lookup[mem8[2]];
+      mem8[3] = simplify_lookup[mem8[3]];
+      mem8[4] = simplify_lookup[mem8[4]];
+      mem8[5] = simplify_lookup[mem8[5]];
+      mem8[6] = simplify_lookup[mem8[6]];
+      mem8[7] = simplify_lookup[mem8[7]];
+
+    } else
+
+      *mem = 0x0101010101010101ULL;
+
+    mem++;
+
+  }
+
+}
+
 inline void classify_counts(afl_forkserver_t *fsrv) {
 
   u64 *mem = (u64 *)fsrv->trace_bits;

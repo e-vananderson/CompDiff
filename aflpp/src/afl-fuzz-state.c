@@ -148,6 +148,12 @@ void afl_state_init(afl_state_t *afl, uint32_t map_size) {
     afl->diff_fsrv[i].dev_null_fd = -1;
     afl->diff_fsrv[i].child_pid = -1;
     afl->diff_fsrv[i].out_dir_fd = -1;
+
+    afl->diff_virgin_bits[i] = ck_alloc(map_size);
+    afl->diff_virgin_tmout[i] = ck_alloc(map_size);
+    afl->diff_virgin_crash[i] = ck_alloc(map_size);
+    afl->diff_var_bytes[i] = ck_alloc(map_size);
+    afl->diff_first_trace[i] = ck_alloc(map_size);
   }
 
   init_mopt_globals(afl);

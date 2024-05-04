@@ -172,6 +172,8 @@ struct queue_entry {
       fuzz_level,                       /* Number of fuzzing iterations     */
       n_fuzz_entry;                     /* offset in n_fuzz                 */
 
+  u32 diff_bitmap_size[MAX_NUM_DIFF];
+
   u64 exec_us,                          /* Execution time (us)              */
       handicap,                         /* Number of queue cycles behind    */
       depth,                            /* Path depth                       */
@@ -179,6 +181,9 @@ struct queue_entry {
 
   u8 *trace_mini;                       /* Trace bytes, if kept             */
   u32 tc_ref;                           /* Trace bytes ref count            */
+
+  u8 *diff_trace_mini[MAX_NUM_DIFF];
+  u32 diff_tc_ref[MAX_NUM_DIFF];
 
 #ifdef INTROSPECTION
   u32 bitsmap_size;
@@ -531,11 +536,16 @@ typedef struct afl_state {
       *virgin_crash,                    /* Bits we haven't seen in crashes  */
       *virgin_diff;                    /* Bits we haven't seen in diffs  */
 
+  u8 *diff_virgin_bits[MAX_NUM_DIFF];
+  u8 *diff_virgin_tmout[MAX_NUM_DIFF];
+  u8 *diff_virgin_crash[MAX_NUM_DIFF];
+
   double *alias_probability;            /* alias weighted probabilities     */
   u32 *   alias_table;                /* alias weighted random lookup table */
   u32     active_paths;                 /* enabled entries in the queue     */
 
   u8 *var_bytes;                        /* Bytes that appear to be variable */
+  u8 *diff_var_bytes[MAX_NUM_DIFF];
 
 #define N_FUZZ_SIZE (1 << 21)
   u32 *n_fuzz;
@@ -560,6 +570,8 @@ typedef struct afl_state {
       current_entry,                    /* Current queue entry ID           */
       havoc_div,                        /* Cycle count divisor for havoc    */
       max_det_extras;                   /* deterministic extra count (dicts)*/
+
+  u32 diff_var_byte_count[MAX_NUM_DIFF];
 
   u64 total_crashes,                    /* Total number of crashes          */
       unique_crashes,                   /* Crashes with unique signatures   */
@@ -619,6 +631,9 @@ typedef struct afl_state {
 
   u64 total_bitmap_size,                /* Total bit count for all bitmaps  */
       total_bitmap_entries;             /* Number of bitmaps counted        */
+
+  u64 diff_total_bitmap_size[MAX_NUM_DIFF];
+  u64 diff_total_bitmap_entries[MAX_NUM_DIFF];
 
   s32 cpu_core_count,                   /* CPU core count                   */
       cpu_to_bind;                      /* bind to specific CPU             */
@@ -704,6 +719,7 @@ typedef struct afl_state {
   u8 *clean_trace;
   u8 *clean_trace_custom;
   u8 *first_trace;
+  u8 *diff_first_trace[MAX_NUM_DIFF];
 
   /*needed for afl_fuzz_one */
   // TODO: see which we can reuse
@@ -1043,6 +1059,7 @@ void mark_as_redundant(afl_state_t *, struct queue_entry *, u8);
 void add_to_queue(afl_state_t *, u8 *, u32, u8);
 void destroy_queue(afl_state_t *);
 void update_bitmap_score(afl_state_t *, struct queue_entry *);
+void diff_update_bitmap_score(afl_state_t *, struct queue_entry *, u32);
 void cull_queue(afl_state_t *);
 u32  calculate_score(afl_state_t *, struct queue_entry *);
 
@@ -1050,9 +1067,12 @@ u32  calculate_score(afl_state_t *, struct queue_entry *);
 
 void write_bitmap(afl_state_t *);
 u32  count_bits(afl_state_t *, u8 *);
+u32  diff_count_bits(afl_state_t *, u8 *, u32);
 u32  count_bytes(afl_state_t *, u8 *);
+u32  diff_count_bytes(afl_state_t *, u8 *, u32);
 u32  count_non_255_bytes(afl_state_t *, u8 *);
 void simplify_trace(afl_state_t *, u8 *);
+void diff_simplify_trace(afl_state_t *, u8 *, u32);
 void classify_counts(afl_forkserver_t *);
 #ifdef WORD_SIZE_64
 void discover_word(u8 *ret, u64 *current, u64 *virgin);
@@ -1061,12 +1081,16 @@ void discover_word(u8 *ret, u32 *current, u32 *virgin);
 #endif
 void init_count_class16(void);
 void minimize_bits(afl_state_t *, u8 *, u8 *);
+void diff_minimize_bits(afl_state_t *, u8 *, u8 *, u32);
 #ifndef SIMPLE_FILES
 u8 *describe_op(afl_state_t *, u8, size_t);
 #endif
 u8 save_if_interesting(afl_state_t *, void *, u32, u8);
+u8 diff_save_if_interesting(afl_state_t *, void *, u32, u8, u32);
 u8 has_new_bits(afl_state_t *, u8 *);
+u8 diff_has_new_bits(afl_state_t *, u8 *, u32);
 u8 has_new_bits_unclassified(afl_state_t *, u8 *);
+u8 diff_has_new_bits_unclassified(afl_state_t *, u8 *, u32);
 
 /* Extras */
 
@@ -1100,7 +1124,9 @@ int  statsd_format_metric(afl_state_t *afl, char *buff, size_t bufflen);
 
 fsrv_run_result_t fuzz_run_target(afl_state_t *, afl_forkserver_t *fsrv, u32);
 void              write_to_testcase(afl_state_t *, void *, u32);
+void              diff_write_to_testcase(afl_state_t *, void *, u32, u32);
 u8   calibrate_case(afl_state_t *, struct queue_entry *, u8 *, u32, u8);
+u8   diff_calibrate_case(afl_state_t *, struct queue_entry *, u8 *, u32, u8, u32);
 void sync_fuzzers(afl_state_t *);
 u8   trim_case(afl_state_t *, struct queue_entry *, u8 *);
 u8   common_fuzz_stuff(afl_state_t *, u8 *, u32);

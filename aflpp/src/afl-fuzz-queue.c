@@ -440,6 +440,10 @@ void add_to_queue(afl_state_t *afl, u8 *fname, u32 len, u8 passed_det) {
   q->testcase_buf = NULL;
   q->mother = afl->queue_cur;
 
+  for (int i = 0; i < MAX_NUM_DIFF; i++) {
+    q->diff_trace_mini[i] = NULL;
+  }
+
 #ifdef INTROSPECTION
   q->bitsmap_size = afl->bitsmap_size;
 #endif
@@ -616,6 +620,115 @@ void update_bitmap_score(afl_state_t *afl, struct queue_entry *q) {
         u32 len = (afl->fsrv.map_size >> 3);
         q->trace_mini = ck_alloc(len);
         minimize_bits(afl, q->trace_mini, afl->fsrv.trace_bits);
+
+      }
+
+      afl->score_changed = 1;
+
+    }
+
+  }
+
+}
+
+void diff_update_bitmap_score(afl_state_t *afl, struct queue_entry *q, u32 diff_idx) {
+
+  u32 i;
+  u64 fav_factor;
+  u64 fuzz_p2;
+
+  if (unlikely(afl->schedule >= FAST && afl->schedule < RARE))
+    fuzz_p2 = 0;  // Skip the fuzz_p2 comparison
+  else if (unlikely(afl->schedule == RARE))
+    fuzz_p2 = next_pow2(afl->n_fuzz[q->n_fuzz_entry]);
+  else
+    fuzz_p2 = q->fuzz_level;
+
+  if (unlikely(afl->schedule >= RARE) || unlikely(afl->fixed_seed)) {
+
+    fav_factor = q->len << 2;
+
+  } else {
+
+    fav_factor = q->exec_us * q->len;
+
+  }
+
+  /* For every byte set in afl->fsrv.trace_bits[], see if there is a previous
+     winner, and how it compares to us. */
+  for (i = 0; i < afl->diff_fsrv[diff_idx].map_size; ++i) {
+
+    if (afl->diff_fsrv[diff_idx].trace_bits[i]) {
+
+      if (afl->top_rated[i]) {
+
+        /* Faster-executing or smaller test cases are favored. */
+        u64 top_rated_fav_factor;
+        u64 top_rated_fuzz_p2;
+        if (unlikely(afl->schedule >= FAST && afl->schedule <= RARE))
+          top_rated_fuzz_p2 =
+              next_pow2(afl->n_fuzz[afl->top_rated[i]->n_fuzz_entry]);
+        else
+          top_rated_fuzz_p2 = afl->top_rated[i]->fuzz_level;
+
+        if (unlikely(afl->schedule >= RARE) || unlikely(afl->fixed_seed)) {
+
+          top_rated_fav_factor = afl->top_rated[i]->len << 2;
+
+        } else {
+
+          top_rated_fav_factor =
+              afl->top_rated[i]->exec_us * afl->top_rated[i]->len;
+
+        }
+
+        if (fuzz_p2 > top_rated_fuzz_p2) {
+
+          continue;
+
+        } else if (fuzz_p2 == top_rated_fuzz_p2) {
+
+          if (fav_factor > top_rated_fav_factor) { continue; }
+
+        }
+
+        if (unlikely(afl->schedule >= RARE) || unlikely(afl->fixed_seed)) {
+
+          if (fav_factor > afl->top_rated[i]->len << 2) { continue; }
+
+        } else {
+
+          if (fav_factor >
+              afl->top_rated[i]->exec_us * afl->top_rated[i]->len) {
+
+            continue;
+
+          }
+
+        }
+
+        /* Looks like we're going to win. Decrease ref count for the
+           previous winner, discard its afl->fsrv.trace_bits[] if necessary. */
+
+        if (!--afl->top_rated[i]->diff_tc_ref[diff_idx]) {
+
+          ck_free(afl->top_rated[i]->diff_trace_mini[diff_idx]);
+          afl->top_rated[i]->diff_trace_mini[diff_idx] = 0;
+
+        }
+
+      }
+
+      /* Insert ourselves as the new winner. */
+
+      afl->top_rated[i] = q;
+      ++q->diff_tc_ref[diff_idx];
+
+      if (!q->diff_trace_mini[diff_idx]) {
+
+        u32 len = (afl->diff_fsrv[diff_idx].map_size >> 3);
+        q->diff_trace_mini[diff_idx] = ck_alloc(len);
+        diff_minimize_bits(afl, q->diff_trace_mini[diff_idx], afl->diff_fsrv[diff_idx].trace_bits, diff_idx);
 
       }
 

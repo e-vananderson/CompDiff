@@ -132,6 +132,65 @@ write_to_testcase(afl_state_t *afl, void *mem, u32 len) {
 
 }
 
+void __attribute__((hot))
+diff_write_to_testcase(afl_state_t *afl, void *mem, u32 len, u32 diff_idx) {
+
+#ifdef _AFL_DOCUMENT_MUTATIONS
+  s32  doc_fd;
+  char fn[PATH_MAX];
+  snprintf(fn, PATH_MAX, "%s/mutations/%09u:%s", afl->out_dir,
+           afl->document_counter++,
+           describe_op(afl, 0, NAME_MAX - strlen("000000000:")));
+
+  if ((doc_fd = open(fn, O_WRONLY | O_CREAT | O_TRUNC, DEFAULT_PERMISSION)) >=
+      0) {
+
+    if (write(doc_fd, mem, len) != len)
+      PFATAL("write to mutation file failed: %s", fn);
+    close(doc_fd);
+
+  }
+
+#endif
+
+  if (unlikely(afl->custom_mutators_count)) {
+
+    ssize_t new_size = len;
+    u8 *    new_mem = mem;
+    u8 *    new_buf = NULL;
+
+    LIST_FOREACH(&afl->custom_mutator_list, struct custom_mutator, {
+
+      if (el->afl_custom_post_process) {
+
+        new_size =
+            el->afl_custom_post_process(el->data, new_mem, new_size, &new_buf);
+
+        if (unlikely(!new_buf && new_size <= 0)) {
+
+          FATAL("Custom_post_process failed (ret: %lu)",
+                (long unsigned)new_size);
+
+        }
+
+        new_mem = new_buf;
+
+      }
+
+    });
+
+    /* everything as planned. use the potentially new data. */
+    afl_fsrv_write_to_testcase(&afl->diff_fsrv[diff_idx], new_mem, new_size);
+
+  } else {
+
+    /* boring uncustom. */
+    afl_fsrv_write_to_testcase(&afl->diff_fsrv[diff_idx], mem, len);
+
+  }
+
+}
+
 /* The same, but with an adjustable gap. Used for trimming. */
 
 static void write_with_gap(afl_state_t *afl, u8 *mem, u32 len, u32 skip_at,
@@ -497,6 +556,235 @@ abort_calibration:
   if (var_detected) {
 
     afl->var_byte_count = count_bytes(afl, afl->var_bytes);
+
+    if (!q->var_behavior) {
+
+      mark_as_variable(afl, q);
+      ++afl->queued_variable;
+
+    }
+
+  }
+
+  afl->stage_name = old_sn;
+  afl->stage_cur = old_sc;
+  afl->stage_max = old_sm;
+
+  if (!first_run) { show_stats(afl); }
+
+  return fault;
+
+}
+
+u8 diff_calibrate_case(afl_state_t *afl, struct queue_entry *q, u8 *use_mem,
+                  u32 handicap, u8 from_queue, u32 diff_idx) {
+
+  if (unlikely(afl->shm.cmplog_mode)) { q->exec_cksum = 0; }
+
+  u8 fault = 0, new_bits = 0, var_detected = 0, hnb = 0,
+     first_run = (q->exec_cksum == 0);
+  u64 start_us, stop_us, diff_us;
+  s32 old_sc = afl->stage_cur, old_sm = afl->stage_max;
+  u32 use_tmout = afl->diff_fsrv[diff_idx].exec_tmout;
+  u8 *old_sn = afl->stage_name;
+
+  /* Be a bit more generous about timeouts when resuming sessions, or when
+     trying to calibrate already-added finds. This helps avoid trouble due
+     to intermittent latency. */
+
+  if (!from_queue || afl->resuming_fuzz) {
+
+    use_tmout = MAX(afl->diff_fsrv[diff_idx].exec_tmout + CAL_TMOUT_ADD,
+                    afl->diff_fsrv[diff_idx].exec_tmout * CAL_TMOUT_PERC / 100);
+
+  }
+
+  ++q->cal_failed;
+
+  afl->stage_name = "calibration";
+  afl->stage_max = afl->afl_env.afl_cal_fast ? 3 : CAL_CYCLES;
+
+  /* Make sure the forkserver is up before we do anything, and let's not
+     count its spin-up time toward binary calibration. */
+
+  if (!afl->diff_fsrv[diff_idx].fsrv_pid) {
+
+    if (afl->diff_fsrv[diff_idx].cmplog_binary &&
+        afl->diff_fsrv[diff_idx].init_child_func != cmplog_exec_child) {
+
+      FATAL("BUG in afl-fuzz detected. Cmplog mode not set correctly.");
+
+    }
+
+    afl_fsrv_start(&afl->diff_fsrv[diff_idx], afl->argv, &afl->stop_soon,
+                   afl->afl_env.afl_debug_child);
+
+    if (afl->diff_fsrv[diff_idx].support_shmem_fuzz && !afl->diff_fsrv[diff_idx].use_shmem_fuzz) {
+
+      afl_shm_deinit(afl->shm_fuzz);
+      ck_free(afl->shm_fuzz);
+      afl->shm_fuzz = NULL;
+      afl->diff_fsrv[diff_idx].support_shmem_fuzz = 0;
+      afl->diff_fsrv[diff_idx].shmem_fuzz = NULL;
+
+    }
+
+  }
+
+  if (q->exec_cksum) {
+
+    memcpy(afl->diff_first_trace[diff_idx], afl->diff_fsrv[diff_idx].trace_bits, afl->diff_fsrv[diff_idx].map_size);
+    hnb = diff_has_new_bits(afl, afl->diff_virgin_bits[diff_idx], diff_idx);
+    if (hnb > new_bits) { new_bits = hnb; }
+
+  }
+
+  start_us = get_cur_time_us();
+
+  for (afl->stage_cur = 0; afl->stage_cur < afl->stage_max; ++afl->stage_cur) {
+
+    if (unlikely(afl->debug)) {
+
+      DEBUGF("calibration stage %d/%d\n", afl->stage_cur + 1, afl->stage_max);
+
+    }
+
+    u64 cksum;
+
+    diff_write_to_testcase(afl, use_mem, q->len, diff_idx);
+
+    fault = fuzz_run_target(afl, &afl->diff_fsrv[diff_idx], use_tmout);
+
+    /* afl->stop_soon is set by the handler for Ctrl+C. When it's pressed,
+       we want to bail out quickly. */
+
+    if (afl->stop_soon || fault != afl->crash_mode) { goto abort_calibration; }
+
+    if (!afl->non_instrumented_mode && !afl->stage_cur &&
+        !diff_count_bytes(afl, afl->diff_fsrv[diff_idx].trace_bits, diff_idx)) {
+
+      fault = FSRV_RUN_NOINST;
+      goto abort_calibration;
+
+    }
+
+#ifdef INTROSPECTION
+    if (unlikely(!q->bitsmap_size)) q->bitsmap_size = afl->bitsmap_size;
+#endif
+
+    classify_counts(&afl->diff_fsrv[diff_idx]);
+    cksum = hash64(afl->diff_fsrv[diff_idx].trace_bits, afl->diff_fsrv[diff_idx].map_size, HASH_CONST);
+    if (q->exec_cksum != cksum) {
+
+      hnb = diff_has_new_bits(afl, afl->diff_virgin_bits[diff_idx], diff_idx);
+      if (hnb > new_bits) { new_bits = hnb; }
+
+      if (q->exec_cksum) {
+
+        u32 i;
+
+        for (i = 0; i < afl->diff_fsrv[diff_idx].map_size; ++i) {
+
+          if (unlikely(!afl->diff_var_bytes[diff_idx][i]) &&
+              unlikely(afl->diff_first_trace[diff_idx][i] != afl->diff_fsrv[diff_idx].trace_bits[i])) {
+
+            afl->diff_var_bytes[diff_idx][i] = 1;
+            // ignore the variable edge by setting it to fully discovered
+            afl->diff_virgin_bits[diff_idx][i] = 0;
+
+          }
+
+        }
+
+        if (unlikely(!var_detected)) {
+
+          // note: from_queue seems to only be set during initialization
+          if (afl->afl_env.afl_no_ui || from_queue) {
+
+            WARNF("instability detected during calibration");
+
+          } else if (afl->debug) {
+
+            DEBUGF("instability detected during calibration\n");
+
+          }
+
+        }
+
+        var_detected = 1;
+        afl->stage_max =
+            afl->afl_env.afl_cal_fast ? CAL_CYCLES : CAL_CYCLES_LONG;
+
+      } else {
+
+        q->exec_cksum = cksum;
+        memcpy(afl->diff_first_trace[diff_idx], afl->diff_fsrv[diff_idx].trace_bits, afl->diff_fsrv[diff_idx].map_size);
+
+      }
+
+    }
+
+  }
+
+  if (unlikely(afl->fixed_seed)) {
+
+    diff_us = (u64)(afl->diff_fsrv[diff_idx].exec_tmout - 1) * (u64)afl->stage_max;
+
+  } else {
+
+    stop_us = get_cur_time_us();
+    diff_us = stop_us - start_us;
+    if (unlikely(!diff_us)) { ++diff_us; }
+
+  }
+
+  afl->total_cal_us += diff_us;
+  afl->total_cal_cycles += afl->stage_max;
+
+  /* OK, let's collect some stats about the performance of this test case.
+     This is used for fuzzing air time calculations in calculate_score(). */
+
+  if (unlikely(!afl->stage_max)) {
+
+    // Pretty sure this cannot happen, yet scan-build complains.
+    FATAL("BUG: stage_max should not be 0 here! Please report this condition.");
+
+  }
+
+  q->exec_us = diff_us / afl->stage_max;
+  q->diff_bitmap_size[diff_idx] = diff_count_bytes(afl, afl->diff_fsrv[diff_idx].trace_bits, diff_idx);
+  q->handicap = handicap;
+  q->cal_failed = 0;
+
+  afl->diff_total_bitmap_size[diff_idx] += q->diff_bitmap_size[diff_idx];
+  ++afl->diff_total_bitmap_entries[diff_idx];
+
+  diff_update_bitmap_score(afl, q, diff_idx);
+
+  /* If this case didn't result in new output from the instrumentation, tell
+     parent. This is a non-critical problem, but something to warn the user
+     about. */
+
+  if (!afl->non_instrumented_mode && first_run && !fault && !new_bits) {
+
+    fault = FSRV_RUN_NOBITS;
+
+  }
+
+abort_calibration:
+
+  if (new_bits == 2 && !q->has_new_cov) {
+
+    q->has_new_cov = 1;
+    ++afl->queued_with_cov;
+
+  }
+
+  /* Mark variable paths. */
+
+  if (var_detected) {
+
+    afl->diff_var_byte_count[diff_idx] = diff_count_bytes(afl, afl->diff_var_bytes[diff_idx], diff_idx);
 
     if (!q->var_behavior) {
 

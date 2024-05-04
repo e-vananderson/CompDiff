@@ -875,7 +875,7 @@ u8 differential_compilers(afl_state_t *afl, void *mem, u32 len) {
   /* Line taken from common_fuzz_stuff; this modification should
    * implement the future work suggestion
    * This handles FAULT_ERROR for us: */
-  afl->queued_discovered += save_if_interesting(afl, mem, len, ret);
+  afl->queued_discovered += diff_save_if_interesting(afl, mem, len, ret, 0);
   
   if (ret == FSRV_RUN_TMOUT) {
     return ret;
@@ -903,7 +903,7 @@ u8 differential_compilers(afl_state_t *afl, void *mem, u32 len) {
     /* Line taken from common_fuzz_stuff; this modification should
     * implement the future work suggestion
     * This handles FAULT_ERROR for us: */
-    afl->queued_discovered += save_if_interesting(afl, mem, len, ret);
+    afl->queued_discovered += diff_save_if_interesting(afl, mem, len, ret, idx);
 
     if (ret == FSRV_RUN_TMOUT) {
       return ret;
